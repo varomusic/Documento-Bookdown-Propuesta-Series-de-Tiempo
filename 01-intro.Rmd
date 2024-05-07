@@ -1,0 +1,47 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Actividad 2 - Propuesta avance 2
+
+Evidenciar, en una de las variables en el tiempo, la aproximación en promedio móvil, en rezagos y en estacionalidad. Todo lo anterior, a través de funciones y gráficas que permitan detectar patrones y ciclos de la variable.
+
+```{r}
+library(forecast)
+```
+
+```{r}
+library(tseries)
+library(timsac)
+library(ggplot2)
+library(changepoint)
+```
+
+```{r}
+library(readxl)
+```
+
+
+```{r}
+library(readxl)
+DATOSST <- read_excel("C:/Users/ALVARO ARIZA/Desktop/Maestria Javeriana/PROYECTO APLICADO III/DATOS ESTRUCTURADOS POR HORA PROYECTO BOGOTA/CENTRO DE ALTO RENDIMIENTO/DATOSST.xlsx")
+View(DATOSST)
+```
+
+```{r}
+Datos.ts <- ts(DATOSST, start=2019, frequency =12) 
+(Datos.ts)
+```
+
+```{r}
+plot(Datos.ts, main=" ", ylab="Valor", col="deepskyblue", xlab="Date")
+title(main = "DATOS PRECIOS")
+```
+```{r}
+seasonplot(Datos.ts, col = rainbow(12), year.labels = TRUE)
+```
+```{r}
+lag.plot(Datos.ts, 9, do.lines = FALSE)
+```
+

@@ -1,0 +1,40 @@
+# Actividad 3: Propuesta Avance 3
+
+Continuando con la dinámica de la construcción del documento con repositorio en github, se debe incluir en el documento la descomposición, la estacionariedad y la diferenciación, en caso de ser necesarias, de la variable y/o variables seleccionadas con estructura a través del tiempo. Además, si es necesario, se debe implementar alguna transformación con el fin de controlar la tendencia y la variabilidad, de la misma. Debes justificar, el por qué son o no necesarios dichos procedimientos.
+
+```{r}
+library(readxl)
+DATOSST <- read_excel("C:/Users/ALVARO ARIZA/Desktop/Maestria Javeriana/PROYECTO APLICADO III/DATOS ESTRUCTURADOS POR HORA PROYECTO BOGOTA/CENTRO DE ALTO RENDIMIENTO/DATOSST.xlsx")
+View(DATOSST)
+```
+
+```{r}
+Datos.ts <- ts(DATOSST, start=2019, frequency =12) 
+(Datos.ts)
+```
+
+```{r}
+plot(Datos.ts, main=" ", ylab="Valor", col="deepskyblue", xlab="Date")
+title(main = "DATOS PRECIOS")
+```
+## Revisar Estacionariedad
+```{r}
+acf(Datos.ts)
+```
+
+## Realizar Ajuste de Diferenciación: en este caso nos arroja cero como respuesta.
+```{r}
+seriedif=diff(Datos.ts)
+plot(seriedif)
+acf(seriedif)
+```
+
+## Análisis de Serie Estacionaria y no Estacionaria
+```{r}
+par(mfrow=c(2,2), mar=c(4,4,4,1) + .1)
+plot(Datos.ts, ylab="Precio", col="blue")
+acf(Datos.ts, main="Serie no Estacioanaria")
+plot(seriedif)
+acf(seriedif, main="Serie Estacionaria")
+```
+

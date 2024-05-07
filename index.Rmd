@@ -11,8 +11,7 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 description: "Propuesta para realizar el Pronóstico de contaminantes del aire; PM2.5 y CO."
 ---
-
-# Propuesta para realizar el Pronóstico de contaminantes del aire; PM2.5 y CO
+# Actividad 1: Propuesta para realizar el Pronóstico de contaminantes del aire; PM2.5 y CO
 
 La propuesta para desarrollar un sistema de monitoreo y análisis de la calidad del aire en Bogotá, mediante tecnologías de IoT y Machine Learning, se presenta como una iniciativa fundamental para abordar la problemática de la contaminación atmosférica en la ciudad. El pronóstico de contaminantes como PM2.5 y CO no solo aporta información valiosa para la ciudadanía, sino que también permite generar acciones concretas que beneficien la salud pública y el medio ambiente.
 La importancia radica en la necesidad de abordar la problemática de la contaminación atmosférica, la cual tiene impactos negativos en la salud pública y el medio ambiente. El objetivo principal es medir y predecir los niveles de monóxido de carbono (CO) y material particulado 2,5 micras (PM2,5) en tres puntos geográficos clave de Bogotá, con el fin de proporcionar información oportuna sobre la contaminación del aire.
